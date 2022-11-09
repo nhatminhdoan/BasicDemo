@@ -31,7 +31,7 @@ public class SetUpDriver {
     }
        
     public static WebDriver setUpDriver()  {
-    	int number = 1;
+    	int number = 3;
     	switch (number) {
   	 // local
   	  case 1:
