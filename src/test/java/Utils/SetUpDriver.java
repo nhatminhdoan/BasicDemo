@@ -32,12 +32,54 @@ public class SetUpDriver {
        
     public static WebDriver setUpDriver()  {
    
+  		   int number = 1;
+    	switch (number) {
+  	 // local
+  	  case 1:
   		    WebDriverManager.chromedriver().setup();
   	    	WebDriver driver = new ChromeDriver();
   	        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
   	        driver.manage().window().maximize();
   	        return driver;
   	        
+  	   //grid     
+  	  case 2:      
+  		  ChromeOptions chromeOptions = new ChromeOptions();
+  		  //chromeOptions.setCapability("browserVersion", "100");
+  		  //chromeOptions.setCapability("platformName", "Windows");
+  		  // Showing a test name instead of the session id in the Grid UI
+  		  //chromeOptions.setCapability("se:name", "My simple test"); 
+  		  // Other type of metadata can be seen in the Grid UI by clicking on the 
+  		  // session info or via GraphQL
+  		 // chromeOptions.setCapability("se:sampleMetadata", "Sample metadata value"); 
+  		  try {
+				return new RemoteWebDriver(new URL(" http://10.134.112.250:4444"), chromeOptions);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+  		     break;
+  	   case 3:  
+  		   ChromeOptions browserOptions = new ChromeOptions();
+			//browserOptions.setPlatformName("Windows 11");
+  	    	//browserOptions.setBrowserVersion("107");
+  	    	//Map<String, Object> sauceOptions = new HashMap<>();
+  	    	//sauceOptions.put("build", "selenium-build-G1PUL");
+  	    	//((MutableCapabilities) sauceOptions).setCapability("name", "hfdl");
+  	    	//browserOptions.setCapability("sauce:options", sauceOptions);
+  	    	
+  	    	URL url = null;
+  			try {
+  				url = new URL("https://oauth-minhqqq09-1feb7:*****eeec@ondemand.apac-southeast-1.saucelabs.com:443/wd/hub");
+  			} catch (MalformedURLException e) {
+  				// TODO Auto-generated catch block
+  				e.printStackTrace();
+  			}
+  	    			return new RemoteWebDriver(url, browserOptions);
+  	    	
+  		  }
+    	
+		return null;
   	   
     	  
     }
