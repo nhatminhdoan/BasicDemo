@@ -34,7 +34,7 @@ public class LoginDefinitions {
     public void verifyLogin() {
   
         // Verify home page
-        Assert.assertTrue(objHomePage.getHomePageText().contains("Employee Information"));
+        Assert.assertTrue(objHomePage.getHomePageText().contains("Dashboard"));
   
     }
      
