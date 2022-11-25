@@ -31,6 +31,9 @@ jobs:
       run: mvn compile
     - name: Test with Maven
       run: mvn test
+ 
+ #- name: Build and Test with Maven   
+ # run: mvn -B package --file pom.xml
 
 
  
