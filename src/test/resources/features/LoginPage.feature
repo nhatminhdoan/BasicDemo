@@ -1,4 +1,4 @@
-Feature: Login to HRMLogin
+Feature: Login to HRMLogins
 
   Background: 
     Given User is on HRMLogin page "https://opensource-demo.orangehrmlive.com/"
