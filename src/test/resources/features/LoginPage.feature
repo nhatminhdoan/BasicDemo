@@ -22,4 +22,4 @@ Feature: Login to HRMLogins
   @MissingUsername
   Scenario: Login with blank username
     When User enters username as " " and password as "admin123"
-    Then User should be able to see a message "Required" below Username
+    Then User should be able to see a message "Require" below Username
